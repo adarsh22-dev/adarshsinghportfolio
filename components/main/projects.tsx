@@ -1,25 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProjectCard } from "@/components/sub/project-card";
 import { PROJECTS } from "@/constants";
 
 export const Projects = () => {
   const [page, setPage] = useState(0);
-  const perPage = 4;
+  const [perPage, setPerPage] = useState(1);
+
+  useEffect(() => {
+    const update = () => setPerPage(window.innerWidth >= 768 ? 4 : 1);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   const totalPages = Math.ceil(PROJECTS.length / perPage);
   const visible = PROJECTS.slice(page * perPage, (page + 1) * perPage);
+
+  useEffect(() => {
+    if (page >= totalPages) setPage(0);
+  }, [totalPages, page]);
 
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20"
+      className="flex flex-col items-center justify-center py-10 md:py-20"
     >
-      <h1 className="text-3xl md:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20 text-center px-6">
+      <h1 className="text-3xl md:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10 md:py-20 text-center px-6">
         My Projects
       </h1>
       <div className="relative w-full max-w-6xl px-6 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {visible.map((project) => (
             <ProjectCard
               key={project.title}
@@ -32,7 +44,7 @@ export const Projects = () => {
         </div>
 
         {totalPages > 1 && (
-          <div className="flex justify-center items-center gap-4 mt-8">
+          <div className="flex justify-center items-center gap-4 mt-6 md:mt-8">
             <button
               onClick={() => setPage((p) => Math.max(0, p - 1))}
               disabled={page === 0}
