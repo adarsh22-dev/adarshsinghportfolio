@@ -57,6 +57,7 @@ space-portfolio/
   |- components/
     |-- main/
     |-- sub/
+    |-- svg-icons.tsx
   |- config/
     |-- index.ts
   |- constants/
@@ -75,6 +76,7 @@ space-portfolio/
   |- postcss.config.js
   |- tailwind.config.ts
   |- tsconfig.json
+  |- vercel.json
 ```
 <!--- FOLDER_STRUCTURE_END --->
 
@@ -128,6 +130,7 @@ Useful resources and dependencies that are used in Space Portfolio.
 - [eslint](https://www.npmjs.com/package/eslint): ^10.4.1
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.2.7
 - [framer-motion](https://www.npmjs.com/package/framer-motion): ^12.40.0
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.17.0
 - [next](https://www.npmjs.com/package/next): 16.2.7
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [react](https://www.npmjs.com/package/react): 19.2.7
@@ -137,7 +140,7 @@ Useful resources and dependencies that are used in Space Portfolio.
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.6.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
 - [three](https://www.npmjs.com/package/three): ^0.184.0
-- [typescript](https://www.npmjs.com/package/typescript): ^6
+- [typescript](https://www.npmjs.com/package/typescript): ^5.7.3
 
 <!--- DEPENDENCIES_END --->
 
