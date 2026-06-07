@@ -28,6 +28,14 @@ export const Experience = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileIndex, setMobileIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,6 +127,7 @@ export const Experience = () => {
               const isActive = scrollProgress >= itemThreshold;
               const isLeft = index % 2 === 0;
               const isMobileVisible = index === mobileIndex;
+              const showAsActive = isMobile ? isMobileVisible : isActive;
 
               return (
                 <div
@@ -130,10 +139,10 @@ export const Experience = () => {
 
                   {/* Timeline dot row */}
                   <div className="relative z-10 flex items-start mb-4 md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2">
-                    <TimelineDot active={isActive} />
+                    <TimelineDot active={showAsActive} />
                     <span
                       className={`ml-3 md:hidden text-[10px] font-black tracking-widest uppercase transition-all duration-700 mt-3 ${
-                        isActive
+                        showAsActive
                           ? "text-purple-400 opacity-100"
                           : "text-gray-600 opacity-40"
                       }`}
@@ -143,7 +152,7 @@ export const Experience = () => {
                   </div>
 
                   {/* Card */}
-                  <div className={`w-full md:w-[42%] ml-10 md:ml-0 ${isLeft ? "" : "md:order-2"}`} style={{ marginLeft: isLeft ? (isActive ? '140px' : '120px') : '0px', marginRight: !isLeft ? (isActive ? '140px' : '120px') : '0px' }}>
+                  <div className={`w-full md:w-[42%] md:ml-0 max-md:!ml-[60px] max-md:!mr-0 ${isLeft ? "" : "md:order-2"}`} style={{ marginLeft: isLeft ? (isActive ? '140px' : '120px') : '0px', marginRight: !isLeft ? (isActive ? '140px' : '120px') : '0px' }}>
                   <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -151,26 +160,26 @@ export const Experience = () => {
                     variants={{
                       hidden: { opacity: 0, y: 30 },
                       visible: {
-                        opacity: isActive ? 1 : 0.4,
+                        opacity: showAsActive ? 1 : 0.4,
                         y: 0,
                         transition: { duration: 0.7 },
                       },
                     }}
                     className={`p-6 md:p-8 rounded-2xl border transition-all duration-700 relative overflow-hidden ${
-                      isActive
+                      showAsActive
                         ? "border-white/20 bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.4)] translate-y-0 opacity-100"
                         : "border-white/5 bg-transparent translate-y-4 opacity-40"
                     }`}
                   >
                     <div
                       className={`absolute top-0 right-0 w-40 h-40 bg-purple-500/10 blur-[60px] rounded-full transition-opacity duration-1000 ${
-                        isActive ? "opacity-100" : "opacity-0"
+                        showAsActive ? "opacity-100" : "opacity-0"
                       }`}
                     />
 
                     <span
                       className={`hidden md:block font-black text-xs tracking-[0.2em] uppercase mb-4 transition-colors duration-700 ${
-                        isActive ? "text-purple-400" : "text-gray-600"
+                        showAsActive ? "text-purple-400" : "text-gray-600"
                       }`}
                     >
                       {exp.period}
@@ -196,7 +205,7 @@ export const Experience = () => {
                         <span
                           key={tag}
                           className={`text-[9px] uppercase tracking-wider font-bold px-3 py-1.5 rounded-lg border transition-all duration-700 ${
-                            isActive
+                            showAsActive
                               ? "bg-purple-500/10 border-purple-500/20 text-purple-200"
                               : "bg-white/5 border-white/5 text-gray-500"
                           }`}
