@@ -184,7 +184,7 @@ export const Experience = () => {
 
       <div className="w-full h-full absolute">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video className="w-full h-auto" preload="false" playsInline loop muted autoPlay>
+          <video className="w-full h-full object-cover" preload="false" playsInline loop muted autoPlay>
             <source src="/videos/skills-bg.webm" type="video/webm" />
           </video>
         </div>

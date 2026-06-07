@@ -66,3 +66,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+@media (max-width: 767px) {
+  .min-w-\[160px\] {
+    min-width: 130px;
+  }
+}
