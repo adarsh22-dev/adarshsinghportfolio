@@ -81,12 +81,12 @@ export const Experience = () => {
       </motion.p>
 
         <div className="relative max-w-5xl w-full px-4 md:px-8">
-          {/* Timeline line - centered on desktop, left on mobile */}
-          <div className="absolute left-[24px] md:left-1/2 md:-translate-x-px top-0 w-[2px] h-full bg-white/5 z-0" />
+          {/* Timeline line - desktop only */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-px top-0 w-[2px] h-full bg-white/5 z-0" />
 
-          {/* Progress line */}
+          {/* Progress line - desktop only */}
           <div
-            className="absolute left-[23px] md:left-1/2 md:-translate-x-px w-[3px] bg-gradient-to-b from-purple-500 via-blue-400 to-transparent z-[1] origin-top shadow-[0_0_20px_rgba(168,85,247,0.5)] transition-all duration-100 ease-out"
+            className="hidden md:block absolute left-1/2 -translate-x-px w-[3px] bg-gradient-to-b from-purple-500 via-blue-400 to-transparent z-[1] origin-top shadow-[0_0_20px_rgba(168,85,247,0.5)] transition-all duration-100 ease-out"
             style={{ height: `${scrollProgress * 100}%`, top: 0 }}
           >
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-12 bg-white blur-md opacity-20" />
@@ -137,22 +137,13 @@ export const Experience = () => {
                   {/* Spacer - on desktop, alternates left/right */}
                   <div className={`hidden md:block w-[42%] ${isLeft ? "" : "order-3"}`} />
 
-                  {/* Timeline dot row */}
-                  <div className="relative z-10 flex items-start mb-4 md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2">
+                  {/* Timeline dot row - desktop only */}
+                  <div className="hidden md:flex items-start mb-4 md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2">
                     <TimelineDot active={showAsActive} />
-                    <span
-                      className={`ml-3 md:hidden text-[10px] font-black tracking-widest uppercase transition-all duration-700 mt-3 ${
-                        showAsActive
-                          ? "text-purple-400 opacity-100"
-                          : "text-gray-600 opacity-40"
-                      }`}
-                    >
-                      {exp.period.split("-")[0]}
-                    </span>
                   </div>
 
                   {/* Card */}
-                  <div className={`w-full md:w-[42%] md:ml-0 max-md:!ml-[60px] max-md:!mr-0 ${isLeft ? "" : "md:order-2"}`} style={{ marginLeft: isLeft ? (isActive ? '140px' : '120px') : '0px', marginRight: !isLeft ? (isActive ? '140px' : '120px') : '0px' }}>
+                  <div className={`w-full md:w-[42%] max-md:!ml-0 ${isLeft ? "" : "md:order-2"}`} style={{ marginLeft: isLeft ? (isActive ? '140px' : '120px') : '0px', marginRight: !isLeft ? (isActive ? '140px' : '120px') : '0px' }}>
                   <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -178,7 +169,7 @@ export const Experience = () => {
                     />
 
                     <span
-                      className={`hidden md:block font-black text-xs tracking-[0.2em] uppercase mb-4 transition-colors duration-700 ${
+                      className={`block font-black text-xs tracking-[0.2em] uppercase mb-4 transition-colors duration-700 ${
                         showAsActive ? "text-purple-400" : "text-gray-600"
                       }`}
                     >
