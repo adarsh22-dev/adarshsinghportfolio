@@ -25,7 +25,7 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-10 md:py-20"
+      className="flex flex-col items-center justify-center py-10 md:py-20 overflow-hidden"
     >
       <h1 className="text-3xl md:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10 md:py-20 text-center px-6">
         My Projects
