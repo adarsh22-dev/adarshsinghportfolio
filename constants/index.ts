@@ -30,19 +30,8 @@ import {
 } from "@/components/svg-icons";
 
 export const SKILL_DATA = [
-  { skill_name: "HTML", icon: HtmlIcon, width: 80, height: 80 },
-  { skill_name: "CSS", icon: CssIcon, width: 80, height: 80 },
-  { skill_name: "JavaScript", icon: JsIcon, width: 65, height: 65 },
-  { skill_name: "Tailwind CSS", icon: TailwindIcon, width: 80, height: 80 },
-  { skill_name: "React", icon: ReactIcon, width: 80, height: 80 },
-  { skill_name: "Redux", icon: ReduxIcon, width: 80, height: 80 },
-  { skill_name: "React Query", icon: ReactQueryIcon, width: 80, height: 80 },
-  { skill_name: "TypeScript", icon: TypeScriptIcon, width: 80, height: 80 },
-  { skill_name: "Next.js 14", icon: NextjsIcon, width: 80, height: 80 },
-  { skill_name: "Framer Motion", icon: FramerMotionIcon, width: 80, height: 80 },
-  { skill_name: "Stripe", icon: StripeIcon, width: 80, height: 80 },
-  { skill_name: "Node.js", icon: NodejsIcon, width: 80, height: 80 },
-  { skill_name: "MongoDB", icon: MongoDBIcon, width: 40, height: 40 },
+  { skill_name: "Framer Motion", icon: FramerMotionIcon, width: 70, height: 70 },
+  { skill_name: "Stripe", icon: StripeIcon, width: 70, height: 70 },
 ];
 
 export const SOCIALS = [
@@ -64,38 +53,38 @@ export const SOCIALS = [
 ] as const;
 
 export const FRONTEND_SKILL = [
-  { skill_name: "HTML", icon: HtmlIcon, width: 80, height: 80 },
-  { skill_name: "CSS", icon: CssIcon, width: 80, height: 80 },
-  { skill_name: "JavaScript", icon: JsIcon, width: 65, height: 65 },
-  { skill_name: "Tailwind CSS", icon: TailwindIcon, width: 80, height: 80 },
-  { skill_name: "Material UI", icon: MaterialUIIcon, width: 80, height: 80 },
-  { skill_name: "React", icon: ReactIcon, width: 80, height: 80 },
-  { skill_name: "Redux", icon: ReduxIcon, width: 80, height: 80 },
-  { skill_name: "React Query", icon: ReactQueryIcon, width: 80, height: 80 },
-  { skill_name: "TypeScript", icon: TypeScriptIcon, width: 80, height: 80 },
-  { skill_name: "Next.js 14", icon: NextjsIcon, width: 80, height: 80 },
+  { skill_name: "HTML", icon: HtmlIcon, width: 70, height: 70 },
+  { skill_name: "CSS", icon: CssIcon, width: 70, height: 70 },
+  { skill_name: "JavaScript", icon: JsIcon, width: 70, height: 70 },
+  { skill_name: "Tailwind CSS", icon: TailwindIcon, width: 70, height: 70 },
+  { skill_name: "Material UI", icon: MaterialUIIcon, width: 70, height: 70 },
+  { skill_name: "React", icon: ReactIcon, width: 70, height: 70 },
+  { skill_name: "Redux", icon: ReduxIcon, width: 70, height: 70 },
+  { skill_name: "React Query", icon: ReactQueryIcon, width: 70, height: 70 },
+  { skill_name: "TypeScript", icon: TypeScriptIcon, width: 70, height: 70 },
+  { skill_name: "Next.js 14", icon: NextjsIcon, width: 70, height: 70 },
 ];
 
 export const BACKEND_SKILL = [
-  { skill_name: "Node.js", icon: NodejsIcon, width: 80, height: 80 },
-  { skill_name: "Express.js", icon: ExpressIcon, width: 80, height: 80 },
-  { skill_name: "MongoDB", icon: MongoDBIcon, width: 40, height: 40 },
-  { skill_name: "Firebase", icon: FirebaseIcon, width: 55, height: 55 },
+  { skill_name: "Node.js", icon: NodejsIcon, width: 70, height: 70 },
+  { skill_name: "Express.js", icon: ExpressIcon, width: 70, height: 70 },
+  { skill_name: "MongoDB", icon: MongoDBIcon, width: 70, height: 70 },
+  { skill_name: "Firebase", icon: FirebaseIcon, width: 70, height: 70 },
   { skill_name: "PostgreSQL", icon: PostgreSQLIcon, width: 70, height: 70 },
   { skill_name: "MySQL", icon: MySQLIcon, width: 70, height: 70 },
   { skill_name: "Prisma", icon: PrismaIcon, width: 70, height: 70 },
-  { skill_name: "Graphql", icon: GraphQLIcon, width: 80, height: 80 },
+  { skill_name: "Graphql", icon: GraphQLIcon, width: 70, height: 70 },
 ];
 
 export const FULLSTACK_SKILL = [
   { skill_name: "React Native", icon: ReactNativeIcon, width: 70, height: 70 },
   { skill_name: "Tauri", icon: TauriIcon, width: 70, height: 70 },
   { skill_name: "Docker", icon: DockerIcon, width: 70, height: 70 },
-  { skill_name: "Figma", icon: FigmaIcon, width: 50, height: 50 },
+  { skill_name: "Figma", icon: FigmaIcon, width: 70, height: 70 },
 ];
 
 export const OTHER_SKILL = [
-  { skill_name: "Go", icon: GoIcon, width: 60, height: 60 },
+  { skill_name: "Go", icon: GoIcon, width: 70, height: 70 },
 ];
 
 export const PROJECTS = [

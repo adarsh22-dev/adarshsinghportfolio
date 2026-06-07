@@ -112,7 +112,7 @@ export const Experience = () => {
                   </div>
 
                   {/* Card */}
-                  <div className={`w-full md:w-[42%] ml-10 md:ml-0 ${isLeft ? "" : "md:order-2"}`} style={{ marginLeft: isActive ? '140px' : '120px' }}>
+                  <div className={`w-full md:w-[42%] ml-10 md:ml-0 ${isLeft ? "" : "md:order-2"}`} style={{ marginLeft: isLeft ? (isActive ? '140px' : '120px') : '0px', marginRight: !isLeft ? (isActive ? '140px' : '120px') : '0px' }}>
                   <motion.div
                     initial="hidden"
                     whileInView="visible"
