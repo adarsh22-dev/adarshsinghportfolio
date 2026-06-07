@@ -52,8 +52,8 @@ export const Experience = () => {
       ref={sectionRef}
       className="flex flex-col items-center justify-center py-20 relative overflow-hidden"
     >
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-600/5 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-600/5 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[800px] h-[500px] bg-purple-600/5 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[800px] h-[500px] bg-blue-600/5 blur-[150px] rounded-full pointer-events-none" />
 
       <motion.div
         variants={slideInFromTop}
@@ -112,7 +112,7 @@ export const Experience = () => {
                   </div>
 
                   {/* Card */}
-                  <div className={`w-full md:w-[42%] ml-10 md:ml-0 ${isLeft ? "" : "md:order-2"}`}>
+                  <div className={`w-full md:w-[42%] ml-10 md:ml-0 ${isLeft ? "" : "md:order-2"}`} style={{ marginLeft: isActive ? '140px' : '120px' }}>
                   <motion.div
                     initial="hidden"
                     whileInView="visible"
