@@ -71,4 +71,8 @@ html {
   .min-w-\[160px\] {
     min-width: 130px;
   }
+  .size-\[70px\] {
+    width: 40px;
+    height: 40px;
+  }
 }
