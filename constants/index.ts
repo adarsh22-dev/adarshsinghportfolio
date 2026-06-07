@@ -142,11 +142,6 @@ export const FOOTER_DATA = [
         icon: GitHubIcon,
         link: "https://github.com/adarsh22-dev",
       },
-      {
-        name: "Portfolio Repo",
-        icon: GitHubIcon,
-        link: "https://github.com/adarsh22-dev/space-portfolio",
-      },
     ],
   },
   {
