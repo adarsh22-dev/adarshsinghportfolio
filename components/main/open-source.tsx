@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { OPEN_SOURCE } from "@/constants";
@@ -8,6 +9,7 @@ import Link from "next/link";
 
 export const OpenSource = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
+  const [mobileIndex, setMobileIndex] = useState(0);
 
   return (
     <section className="flex flex-col items-center justify-center py-20 relative overflow-hidden">
@@ -29,6 +31,17 @@ export const OpenSource = () => {
           <h1 className="Welcome-text text-[13px]">Open Source Contributions</h1>
         </div>
 
+        {/* Mobile Nav */}
+        <div className="flex md:hidden items-center justify-center gap-4 mb-4">
+          <button onClick={() => setMobileIndex(i => Math.max(0, i - 1))} disabled={mobileIndex === 0} className="size-9 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
+          </button>
+          <span className="text-xs text-gray-500 font-mono">{mobileIndex + 1} / {OPEN_SOURCE.length}</span>
+          <button onClick={() => setMobileIndex(i => Math.min(OPEN_SOURCE.length - 1, i + 1))} disabled={mobileIndex === OPEN_SOURCE.length - 1} className="size-9 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6" /></svg>
+          </button>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
           {OPEN_SOURCE.map((repo, i) => (
             <motion.div
@@ -37,7 +50,7 @@ export const OpenSource = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-5 rounded-lg bg-[#0300145e] border border-[#7042f88b] backdrop-blur-sm"
+              className={`p-5 rounded-lg bg-[#0300145e] border border-[#7042f88b] backdrop-blur-sm ${i === mobileIndex ? "" : "hidden md:block"}`}
             >
               <div className="flex items-center gap-2 mb-3">
                 <GitHubIcon className="h-5 w-5 text-gray-400" />

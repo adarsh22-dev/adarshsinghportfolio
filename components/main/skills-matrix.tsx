@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { SKILLS_MATRIX } from "@/constants";
 
 export const SkillsMatrix = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
+  const [mobileIndex, setMobileIndex] = useState(0);
 
   return (
     <section className="flex flex-col items-center justify-center py-20 relative overflow-hidden">
@@ -27,6 +29,17 @@ export const SkillsMatrix = () => {
           <h1 className="Welcome-text text-[13px]">Skills Matrix</h1>
         </div>
 
+        {/* Mobile Nav */}
+        <div className="flex md:hidden items-center justify-center gap-4 mb-4">
+          <button onClick={() => setMobileIndex(i => Math.max(0, i - 1))} disabled={mobileIndex === 0} className="size-9 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
+          </button>
+          <span className="text-xs text-gray-500 font-mono">{mobileIndex + 1} / {SKILLS_MATRIX.length}</span>
+          <button onClick={() => setMobileIndex(i => Math.min(SKILLS_MATRIX.length - 1, i + 1))} disabled={mobileIndex === SKILLS_MATRIX.length - 1} className="size-9 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6" /></svg>
+          </button>
+        </div>
+
         <div className="w-full overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
@@ -43,7 +56,7 @@ export const SkillsMatrix = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="border-b border-[#7042f83a] hover:bg-[#7042f81a] transition"
+                  className={`border-b border-[#7042f83a] hover:bg-[#7042f81a] transition ${i === mobileIndex ? "" : "hidden md:table-row"}`}
                 >
                   <td className="py-3 px-4 text-[#b49bff] font-medium">{row.area}</td>
                   <td className="py-3 px-4 text-gray-400">{row.skills}</td>
