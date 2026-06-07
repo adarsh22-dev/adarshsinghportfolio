@@ -1,37 +1,8 @@
-import {
-  CssIcon,
-  DockerIcon,
-  ExpressIcon,
-  ExternalLinkIcon,
-  FigmaIcon,
-  FirebaseIcon,
-  FramerMotionIcon,
-  GitHubIcon,
-  GoIcon,
-  GraphQLIcon,
-  HtmlIcon,
-  JsIcon,
-  LinkedInIcon,
-  MaterialUIIcon,
-  MongoDBIcon,
-  MySQLIcon,
-  NextjsIcon,
-  NodejsIcon,
-  PostgreSQLIcon,
-  PrismaIcon,
-  ReactIcon,
-  ReactNativeIcon,
-  ReactQueryIcon,
-  ReduxIcon,
-  StripeIcon,
-  TailwindIcon,
-  TauriIcon,
-  TypeScriptIcon,
-} from "@/components/svg-icons";
+import { ExternalLinkIcon, GitHubIcon, LinkedInIcon } from "@/components/svg-icons";
 
 export const SKILL_DATA = [
-  { skill_name: "Framer Motion", icon: FramerMotionIcon, width: 70, height: 70 },
-  { skill_name: "Stripe", icon: StripeIcon, width: 70, height: 70 },
+  { skill_name: "Framer Motion", image: "/skills/framer.png" },
+  { skill_name: "Stripe", image: "/skills/stripe.png" },
 ];
 
 export const SOCIALS = [
@@ -53,38 +24,38 @@ export const SOCIALS = [
 ] as const;
 
 export const FRONTEND_SKILL = [
-  { skill_name: "HTML", icon: HtmlIcon, width: 70, height: 70 },
-  { skill_name: "CSS", icon: CssIcon, width: 70, height: 70 },
-  { skill_name: "JavaScript", icon: JsIcon, width: 70, height: 70 },
-  { skill_name: "Tailwind CSS", icon: TailwindIcon, width: 70, height: 70 },
-  { skill_name: "Material UI", icon: MaterialUIIcon, width: 70, height: 70 },
-  { skill_name: "React", icon: ReactIcon, width: 70, height: 70 },
-  { skill_name: "Redux", icon: ReduxIcon, width: 70, height: 70 },
-  { skill_name: "React Query", icon: ReactQueryIcon, width: 70, height: 70 },
-  { skill_name: "TypeScript", icon: TypeScriptIcon, width: 70, height: 70 },
-  { skill_name: "Next.js 14", icon: NextjsIcon, width: 70, height: 70 },
+  { skill_name: "HTML", image: "/skills/html.png" },
+  { skill_name: "CSS", image: "/skills/css.png" },
+  { skill_name: "JavaScript", image: "/skills/js.png" },
+  { skill_name: "Tailwind CSS", image: "/skills/tailwind.png" },
+  { skill_name: "Material UI", image: "/skills/mui.png" },
+  { skill_name: "React", image: "/skills/react.png" },
+  { skill_name: "Redux", image: "/skills/redux.png" },
+  { skill_name: "React Query", image: "/skills/reactquery.png" },
+  { skill_name: "TypeScript", image: "/skills/ts.png" },
+  { skill_name: "Next.js 14", image: "/skills/next.png" },
 ];
 
 export const BACKEND_SKILL = [
-  { skill_name: "Node.js", icon: NodejsIcon, width: 70, height: 70 },
-  { skill_name: "Express.js", icon: ExpressIcon, width: 70, height: 70 },
-  { skill_name: "MongoDB", icon: MongoDBIcon, width: 70, height: 70 },
-  { skill_name: "Firebase", icon: FirebaseIcon, width: 70, height: 70 },
-  { skill_name: "PostgreSQL", icon: PostgreSQLIcon, width: 70, height: 70 },
-  { skill_name: "MySQL", icon: MySQLIcon, width: 70, height: 70 },
-  { skill_name: "Prisma", icon: PrismaIcon, width: 70, height: 70 },
-  { skill_name: "Graphql", icon: GraphQLIcon, width: 70, height: 70 },
+  { skill_name: "Node.js", image: "/skills/node.png" },
+  { skill_name: "Express.js", image: "/skills/express.png" },
+  { skill_name: "MongoDB", image: "/skills/mongodb.png" },
+  { skill_name: "Firebase", image: "/skills/firebase.png" },
+  { skill_name: "PostgreSQL", image: "/skills/postgresql.png" },
+  { skill_name: "MySQL", image: "/skills/mysql.png" },
+  { skill_name: "Prisma", image: "/skills/prisma.png" },
+  { skill_name: "Graphql", image: "/skills/graphql.png" },
 ];
 
 export const FULLSTACK_SKILL = [
-  { skill_name: "React Native", icon: ReactNativeIcon, width: 70, height: 70 },
-  { skill_name: "Tauri", icon: TauriIcon, width: 70, height: 70 },
-  { skill_name: "Docker", icon: DockerIcon, width: 70, height: 70 },
-  { skill_name: "Figma", icon: FigmaIcon, width: 70, height: 70 },
+  { skill_name: "React Native", image: "/skills/reactnative.png" },
+  { skill_name: "Tauri", image: "/skills/tauri.png" },
+  { skill_name: "Docker", image: "/skills/docker.png" },
+  { skill_name: "Figma", image: "/skills/figma.png" },
 ];
 
 export const OTHER_SKILL = [
-  { skill_name: "Go", icon: GoIcon, width: 70, height: 70 },
+  { skill_name: "Go", image: "/skills/go.png" },
 ];
 
 export const PROJECTS = [

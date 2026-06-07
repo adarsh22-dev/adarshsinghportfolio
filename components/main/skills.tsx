@@ -23,10 +23,8 @@ export const Skills = () => {
         {SKILL_DATA.map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}
-            icon={skill.icon}
+            image={skill.image}
             name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
             index={i}
           />
         ))}
@@ -36,10 +34,8 @@ export const Skills = () => {
         {FRONTEND_SKILL.map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}
-            icon={skill.icon}
+            image={skill.image}
             name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
             index={i}
           />
         ))}
@@ -48,10 +44,8 @@ export const Skills = () => {
         {BACKEND_SKILL.map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}
-            icon={skill.icon}
+            image={skill.image}
             name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
             index={i}
           />
         ))}
@@ -60,10 +54,8 @@ export const Skills = () => {
         {FULLSTACK_SKILL.map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}
-            icon={skill.icon}
+            image={skill.image}
             name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
             index={i}
           />
         ))}
@@ -72,10 +64,8 @@ export const Skills = () => {
         {OTHER_SKILL.map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}
-            icon={skill.icon}
+            image={skill.image}
             name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
             index={i}
           />
         ))}
