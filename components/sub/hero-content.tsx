@@ -17,7 +17,7 @@ export const HeroContent = () => {
       animate="visible"
       className="flex flex-row items-center justify-center px-6 lg:px-20 mt-32 sm:mt-40 w-full z-[20]"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="h-full w-full flex flex-col gap-5 justify-center text-start">
         <motion.div
           variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] max-w-full"
@@ -111,6 +111,10 @@ export const HeroContent = () => {
             <ExternalLinkIcon className="h-6 w-6" />
           </Link>
         </motion.div>
+      </div>
+
+      <div className="hidden md:flex items-center justify-end w-full">
+        <img src="/hero-bg.svg" alt="" className="w-full max-w-[500px] h-auto opacity-80" />
       </div>
     </motion.div>
   );

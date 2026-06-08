@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { IMPACT_METRICS } from "@/constants";
+import { ChevronRightIcon } from "@/components/svg-icons";
 
 function Counter({ value, label, suffix }: { value: string; label: string; suffix: string }) {
   return (
@@ -12,7 +13,7 @@ function Counter({ value, label, suffix }: { value: string; label: string; suffi
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center p-6 rounded-lg bg-[#0300145e] border border-[#7042f88b] backdrop-blur-sm min-w-[160px]"
+      className="flex flex-col items-center justify-center p-4 sm:p-6 rounded-lg bg-[#0300145e] border border-[#7042f88b] backdrop-blur-sm min-w-[140px] sm:min-w-[160px]"
     >
       <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
         {value}{suffix}
@@ -24,18 +25,18 @@ function Counter({ value, label, suffix }: { value: string; label: string; suffi
 
 export const ImpactMetrics = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
-  const [mobileIndex, setMobileIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -320 : 320,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section className="flex flex-col items-center justify-center py-10 md:py-20 relative overflow-hidden">
-      <div className="w-full h-full absolute">
-        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video className="w-full h-full object-cover" preload="false" playsInline loop muted autoPlay>
-            <source src="/videos/skills-bg.webm" type="video/webm" />
-          </video>
-        </div>
-      </div>
-
       <motion.div
         ref={ref}
         initial="hidden"
@@ -46,23 +47,24 @@ export const ImpactMetrics = () => {
           <h1 className="Welcome-text text-[13px]">Impact by the Numbers</h1>
         </div>
 
-        {/* Mobile Nav */}
-        <div className="flex md:hidden items-center justify-center gap-4 mb-4">
-          <button onClick={() => setMobileIndex(i => Math.max(0, i - 1))} disabled={mobileIndex === 0} className="size-9 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition" aria-label="Previous">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" pointerEvents="none"><polyline points="15 18 9 12 15 6" /></svg>
-          </button>
-          <span className="text-xs text-gray-500 font-mono">{mobileIndex + 1} / {IMPACT_METRICS.length}</span>
-          <button onClick={() => setMobileIndex(i => Math.min(IMPACT_METRICS.length - 1, i + 1))} disabled={mobileIndex === IMPACT_METRICS.length - 1} className="size-9 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition" aria-label="Next">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" pointerEvents="none"><polyline points="9 18 15 12 9 6" /></svg>
-          </button>
-        </div>
+        <div className="relative w-full">
+          <div
+            ref={scrollRef}
+            className="flex md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 overflow-x-auto md:overflow-visible scroll-smooth w-full pb-2"
+          >
+            {IMPACT_METRICS.map((metric, i) => (
+              <div key={i} className="shrink-0 w-[40vw] md:w-auto md:shrink">
+                <Counter value={metric.value} label={metric.label} suffix={metric.suffix} />
+              </div>
+            ))}
+          </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full">
-          {IMPACT_METRICS.map((metric, i) => (
-            <div key={i} className={i === mobileIndex ? "" : "hidden md:block"}>
-              <Counter value={metric.value} label={metric.label} suffix={metric.suffix} />
-            </div>
-          ))}
+          <button onClick={() => scroll("left")} className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[#030014] border border-white/20 flex items-center justify-center text-white hover:border-purple-500/50 transition rotate-180">
+            <ChevronRightIcon className="h-4 w-4" />
+          </button>
+          <button onClick={() => scroll("right")} className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[#030014] border border-white/20 flex items-center justify-center text-white hover:border-purple-500/50 transition">
+            <ChevronRightIcon className="h-4 w-4" />
+          </button>
         </div>
       </motion.div>
     </section>

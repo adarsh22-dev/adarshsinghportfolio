@@ -11,14 +11,6 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="flex flex-col items-center justify-center py-10 md:py-20 relative overflow-hidden">
-      <div className="w-full h-full absolute">
-        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video className="w-full h-full object-cover" preload="false" playsInline loop muted autoPlay>
-            <source src="/videos/encryption-bg.webm" type="video/webm" />
-          </video>
-        </div>
-      </div>
-
       <motion.div
         ref={ref}
         initial="hidden"
