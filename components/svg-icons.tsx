@@ -249,7 +249,7 @@ export const CheckIcon = ({ className }: IconProps) => (
 );
 
 export const ChevronRightIcon = ({ className }: IconProps) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" pointerEvents="none">
     <polyline points="9 18 15 12 9 6" />
   </svg>
 );

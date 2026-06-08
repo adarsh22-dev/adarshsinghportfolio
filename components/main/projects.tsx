@@ -51,7 +51,7 @@ export const Projects = () => {
               className="size-10 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition"
               aria-label="Previous projects"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" pointerEvents="none">
                 <polyline points="15 18 9 12 15 6" />
               </svg>
             </button>
@@ -66,7 +66,7 @@ export const Projects = () => {
               className="size-10 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition"
               aria-label="Next projects"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" pointerEvents="none">
                 <polyline points="9 18 15 12 9 6" />
               </svg>
             </button>

@@ -22,7 +22,7 @@ export const Certifications = () => {
   return (
     <section
       id="certifications"
-      className="flex flex-col items-center justify-center py-20 relative overflow-hidden"
+      className="flex flex-col items-center justify-center py-10 md:py-20 relative overflow-hidden"
     >
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-purple-600/5 blur-[150px] rounded-full pointer-events-none" />
 

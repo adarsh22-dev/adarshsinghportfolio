@@ -44,7 +44,7 @@ export const TechArchitecture = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
-    <section className="flex flex-col items-center justify-center py-20 relative overflow-hidden">
+    <section className="flex flex-col items-center justify-center py-10 md:py-20 relative overflow-hidden">
       <div className="w-full h-full absolute">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
           <video className="w-full h-full object-cover" preload="false" playsInline loop muted autoPlay>

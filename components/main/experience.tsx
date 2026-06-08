@@ -59,7 +59,7 @@ export const Experience = () => {
     <section
       id="experience"
       ref={sectionRef}
-      className="flex flex-col items-center justify-center py-20 relative overflow-hidden"
+      className="flex flex-col items-center justify-center py-10 md:py-20 relative overflow-hidden"
     >
       <div className="absolute top-1/4 left-1/4 w-[800px] h-[500px] bg-purple-600/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[800px] h-[500px] bg-blue-600/5 blur-[150px] rounded-full pointer-events-none" />
@@ -92,7 +92,7 @@ export const Experience = () => {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-12 bg-white blur-md opacity-20" />
           </div>
 
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-10 md:gap-16">
             {/* Mobile Carousel Controls */}
             <div className="flex md:hidden items-center justify-center gap-4 -mt-8 mb-2">
               <button
@@ -101,7 +101,7 @@ export const Experience = () => {
                 className="size-9 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition"
                 aria-label="Previous experience"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" pointerEvents="none">
                   <polyline points="15 18 9 12 15 6" />
                 </svg>
               </button>
@@ -116,7 +116,7 @@ export const Experience = () => {
                 className="size-9 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition"
                 aria-label="Next experience"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" pointerEvents="none">
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
               </button>
